@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9FF3899-23A1-4169-B4E3-581797F6514F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GenotickDotNet</RootNamespace>
+    <AssemblyName>GenotickDotNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="breeder\BreederSettings.cs" />
+    <Compile Include="breeder\RobotBreeder.cs" />
+    <Compile Include="breeder\RobotBreederFactory.cs" />
+    <Compile Include="breeder\SimpleBreeder.cs" />
+    <Compile Include="data\DataException.cs" />
+    <Compile Include="data\DataFactory.cs" />
+    <Compile Include="data\DataLoader.cs" />
+    <Compile Include="data\DataSet.cs" />
+    <Compile Include="data\DataSetName.cs" />
+    <Compile Include="data\DataUtils.cs" />
+    <Compile Include="data\FileSystemDataLoader.cs" />
+    <Compile Include="data\MainAppData.cs" />
+    <Compile Include="data\NoDataForTimePointException.cs" />
+    <Compile Include="data\YahooFixer.cs" />
+    <Compile Include="genotick\DataSetExecutor.cs" />
+    <Compile Include="genotick\DataSetResult.cs" />
+    <Compile Include="genotick\Engine.cs" />
+    <Compile Include="genotick\EngineFactory.cs" />
+    <Compile Include="genotick\EngineSettings.cs" />
+    <Compile Include="genotick\errorCodes.cs" />
+    <Compile Include="genotick\Main.cs" />
+    <Compile Include="genotick\MainSettings.cs" />
+    <Compile Include="genotick\Outcome.cs" />
+    <Compile Include="genotick\PopulationFactory.cs" />
+    <Compile Include="genotick\Prediction.cs" />
+    <Compile Include="genotick\ProfitRecorder.cs" />
+    <Compile Include="genotick\RandomGenerator.cs" />
+    <Compile Include="genotick\RobotData.cs" />
+    <Compile Include="genotick\RobotResult.cs" />
+    <Compile Include="genotick\SimpleDataSetExecutor.cs" />
+    <Compile Include="genotick\SimpleEngine.cs" />
+    <Compile Include="genotick\Simulation.cs" />
+    <Compile Include="genotick\Tools.cs" />
+    <Compile Include="genotick\WeightCalculator.cs" />
+    <Compile Include="instructions\AddDoubleToRegister.cs" />
+    <Compile Include="instructions\AddDoubleToVariable.cs" />
+    <Compile Include="instructions\AddRegisterToRegister.cs" />
+    <Compile Include="instructions\AddRegisterToVariable.cs" />
+    <Compile Include="instructions\AddVariableToVariable.cs" />
+    <Compile Include="instructions\AverageOfColumn.cs" />
+    <Compile Include="instructions\DataInstruction.cs" />
+    <Compile Include="instructions\DataRegInstruction.cs" />
+    <Compile Include="instructions\DataVarInstruction.cs" />
+    <Compile Include="instructions\DecrementRegister.cs" />
+    <Compile Include="instructions\DecrementVariable.cs" />
+    <Compile Include="instructions\DivideRegisterByDouble.cs" />
+    <Compile Include="instructions\DivideRegisterByRegister.cs" />
+    <Compile Include="instructions\DivideRegisterByVariable.cs" />
+    <Compile Include="instructions\DivideVariableByDouble.cs" />
+    <Compile Include="instructions\DivideVariableByRegister.cs" />
+    <Compile Include="instructions\DivideVariableByVariable.cs" />
+    <Compile Include="instructions\HighestOfColumn.cs" />
+    <Compile Include="instructions\IncrementRegister.cs" />
+    <Compile Include="instructions\IncrementVariable.cs" />
+    <Compile Include="instructions\Instruction.cs" />
+    <Compile Include="instructions\InstructionField.cs" />
+    <Compile Include="instructions\InstructionList.cs" />
+    <Compile Include="instructions\JumpIfRegisterEqualDouble.cs" />
+    <Compile Include="instructions\JumpIfRegisterEqualRegister.cs" />
+    <Compile Include="instructions\JumpIfRegisterEqualZero.cs" />
+    <Compile Include="instructions\JumpIfRegisterGreaterThanDouble.cs" />
+    <Compile Include="instructions\JumpIfRegisterGreaterThanRegister.cs" />
+    <Compile Include="instructions\JumpIfRegisterGreaterThanZero.cs" />
+    <Compile Include="instructions\JumpIfRegisterLessThanDouble.cs" />
+    <Compile Include="instructions\JumpIfRegisterLessThanRegister.cs" />
+    <Compile Include="instructions\JumpIfRegisterLessThanZero.cs" />
+    <Compile Include="instructions\JumpIfRegisterNotEqualDouble.cs" />
+    <Compile Include="instructions\JumpIfRegisterNotEqualRegister.cs" />
+    <Compile Include="instructions\JumpIfRegisterNotEqualZero.cs" />
+    <Compile Include="instructions\JumpIfVariableEqualDouble.cs" />
+    <Compile Include="instructions\JumpIfVariableEqualRegister.cs" />
+    <Compile Include="instructions\JumpIfVariableEqualVariable.cs" />
+    <Compile Include="instructions\JumpIfVariableEqualZero.cs" />
+    <Compile Include="instructions\JumpIfVariableGreaterThanDouble.cs" />
+    <Compile Include="instructions\JumpIfVariableGreaterThanRegister.cs" />
+    <Compile Include="instructions\JumpIfVariableGreaterThanVariable.cs" />
+    <Compile Include="instructions\JumpIfVariableGreaterThanZero.cs" />
+    <Compile Include="instructions\JumpIfVariableLessThanDouble.cs" />
+    <Compile Include="instructions\JumpIfVariableLessThanRegister.cs" />
+    <Compile Include="instructions\JumpIfVariableLessThanVariable.cs" />
+    <Compile Include="instructions\JumpIfVariableLessThanZero.cs" />
+    <Compile Include="instructions\JumpIfVariableNotEqualDouble.cs" />
+    <Compile Include="instructions\JumpIfVariableNotEqualRegister.cs" />
+    <Compile Include="instructions\JumpIfVariableNotEqualVariable.cs" />
+    <Compile Include="instructions\JumpIfVariableNotEqualZero.cs" />
+    <Compile Include="instructions\JumpInstruction.cs" />
+    <Compile Include="instructions\JumpTo.cs" />
+    <Compile Include="instructions\LowestOfColumn.cs" />
+    <Compile Include="instructions\MoveDataToRegister.cs" />
+    <Compile Include="instructions\MoveDataToVariable.cs" />
+    <Compile Include="instructions\MoveDoubleToRegister.cs" />
+    <Compile Include="instructions\MoveDoubleToVariable.cs" />
+    <Compile Include="instructions\MoveRegisterToRegister.cs" />
+    <Compile Include="instructions\MoveRegisterToVariable.cs" />
+    <Compile Include="instructions\MoveRelativeDataToRegister.cs" />
+    <Compile Include="instructions\MoveRelativeDataToVariable.cs" />
+    <Compile Include="instructions\MoveVariableToRegister.cs" />
+    <Compile Include="instructions\MoveVariableToVariable.cs" />
+    <Compile Include="instructions\MultiplyRegisterByDouble.cs" />
+    <Compile Include="instructions\MultiplyRegisterByRegister.cs" />
+    <Compile Include="instructions\MultiplyRegisterByVariable.cs" />
+    <Compile Include="instructions\MultiplyVariableByDouble.cs" />
+    <Compile Include="instructions\MultiplyVariableByVariable.cs" />
+    <Compile Include="instructions\NaturalLogarithmOfData.cs" />
+    <Compile Include="instructions\NaturalLogarithmOfRegister.cs" />
+    <Compile Include="instructions\NaturalLogarithmOfVariable.cs" />
+    <Compile Include="instructions\RegDoubleInstruction.cs" />
+    <Compile Include="instructions\RegDoubleJumpInstruction.cs" />
+    <Compile Include="instructions\RegInstruction.cs" />
+    <Compile Include="instructions\Registers.cs" />
+    <Compile Include="instructions\RegJumpInstruction.cs" />
+    <Compile Include="instructions\RegRegInstruction.cs" />
+    <Compile Include="instructions\RegRegJumpInstruction.cs" />
+    <Compile Include="instructions\RegVarInstruction.cs" />
+    <Compile Include="instructions\RegVarJumpInstruction.cs" />
+    <Compile Include="instructions\ReturnRegisterAsResult.cs" />
+    <Compile Include="instructions\ReturnVariableAsResult.cs" />
+    <Compile Include="instructions\SqRootOfRegister.cs" />
+    <Compile Include="instructions\SqRootOfVariable.cs" />
+    <Compile Include="instructions\SubtractDoubleFromRegister.cs" />
+    <Compile Include="instructions\SubtractDoubleFromVariable.cs" />
+    <Compile Include="instructions\SubtractRegisterFromRegister.cs" />
+    <Compile Include="instructions\SubtractRegisterFromVariable.cs" />
+    <Compile Include="instructions\SubtractVariableFromRegister.cs" />
+    <Compile Include="instructions\SubtractVariableFromVariable.cs" />
+    <Compile Include="instructions\SumOfColumn.cs" />
+    <Compile Include="instructions\SwapRegisters.cs" />
+    <Compile Include="instructions\SwapVariables.cs" />
+    <Compile Include="instructions\TerminateInstructionList.cs" />
+    <Compile Include="instructions\Tools.cs" />
+    <Compile Include="instructions\VarDoubleInstruction.cs" />
+    <Compile Include="instructions\VarDoubleJumpInstruction.cs" />
+    <Compile Include="instructions\VarInstruction.cs" />
+    <Compile Include="instructions\VarJumpInstruction.cs" />
+    <Compile Include="instructions\VarVarInstruction.cs" />
+    <Compile Include="instructions\VarVarJumpInstruction.cs" />
+    <Compile Include="instructions\ZeroOutRegister.cs" />
+    <Compile Include="instructions\ZeroOutVariable.cs" />
+    <Compile Include="killer\RobotKiller.cs" />
+    <Compile Include="killer\RobotKillerFactory.cs" />
+    <Compile Include="killer\RobotKillerSettings.cs" />
+    <Compile Include="killer\SimpleRobotKiller.cs" />
+    <Compile Include="mutator\Mutator.cs" />
+    <Compile Include="mutator\MutatorFactory.cs" />
+    <Compile Include="mutator\MutatorSettings.cs" />
+    <Compile Include="mutator\SimpleMutator.cs" />
+    <Compile Include="population\AbsoluteWeightComparator.cs" />
+    <Compile Include="population\AgeComparator.cs" />
+    <Compile Include="population\DAOException.cs" />
+    <Compile Include="population\Population.cs" />
+    <Compile Include="population\PopulationDAO.cs" />
+    <Compile Include="population\PopulationDAOFactory.cs" />
+    <Compile Include="population\PopulationDAOFileSystem.cs" />
+    <Compile Include="population\PopulationDAORAM.cs" />
+    <Compile Include="population\Robot.cs" />
+    <Compile Include="population\RobotExecutor.cs" />
+    <Compile Include="population\RobotExecutorSettings.cs" />
+    <Compile Include="population\RobotInfo.cs" />
+    <Compile Include="population\RobotName.cs" />
+    <Compile Include="population\SimplePopulation.cs" />
+    <Compile Include="processor\NotEnoughDataException.cs" />
+    <Compile Include="processor\Processor.cs" />
+    <Compile Include="processor\RobotExecutorFactory.cs" />
+    <Compile Include="processor\SimpleProcessor.cs" />
+    <Compile Include="processor\TooManyInstructionsExecuted.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reversal\Reversal.cs" />
+    <Compile Include="timepoint\DaemonThreadFactory.cs" />
+    <Compile Include="timepoint\SetStats.cs" />
+    <Compile Include="timepoint\SimpleTimePointExecutor.cs" />
+    <Compile Include="timepoint\TimePoint.cs" />
+    <Compile Include="timepoint\TimePointExecutor.cs" />
+    <Compile Include="timepoint\TimePointExecutorFactory.cs" />
+    <Compile Include="timepoint\TimePointResult.cs" />
+    <Compile Include="timepoint\TimePointStats.cs" />
+    <Compile Include="ui\BasicUserInput.cs" />
+    <Compile Include="ui\ConsoleInput.cs" />
+    <Compile Include="ui\ConsoleOutput.cs" />
+    <Compile Include="ui\CsvOutput.cs" />
+    <Compile Include="ui\DefaultInputs.cs" />
+    <Compile Include="ui\FileInput.cs" />
+    <Compile Include="ui\Parameters.cs" />
+    <Compile Include="ui\RandomParametersInput.cs" />
+    <Compile Include="ui\UserInput.cs" />
+    <Compile Include="ui\UserInputOutputFactory.cs" />
+    <Compile Include="ui\UserOutput.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
